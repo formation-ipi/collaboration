@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser');
 
 const app = express();
+app.engine('html', require('ejs').renderFile);
+
 const port = process.env.PORT || 3000;
 const todos = [
     {
@@ -13,6 +15,13 @@ const todos = [
         done: false
     }
 ];
+const me = [
+    {
+        title: 'Presentation',
+        age: 25,
+        name: "Eymeric SERTGOZ",
+    }
+];
 
 app.use(bodyParser.json());
 
@@ -21,6 +30,11 @@ app.use((req, res, next) => {
     console.log(new Date().toISOString(), req.method, req.url);
     next();
 });
+
+app.get('/', (req, res) => {
+        res.render("index.html")
+    })
+
 
 app.route('/todos')
     // Récupération des todos
@@ -32,6 +46,12 @@ app.route('/todos')
         todos.push(req.body);
         // HTTP 201 => Created
         res.sendStatus(201);
+    });
+
+app.route('/me')
+    // Récupération des todos
+    .get((req, res) => {
+        res.json(me);
     });
 
 app.listen(port, () => {
