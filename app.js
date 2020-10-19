@@ -26,13 +26,19 @@ app.route('/todos')
     // Récupération des todos
     .get((req, res) => {
         res.json(todos);
+
     })
     // Création d'un todo
     .post((req, res) => {
         todos.push(req.body);
         // HTTP 201 => Created
         res.sendStatus(201);
+
     });
+
+app.get('/GiraultMaxence' , (req,res) => {
+    res.send('20');
+});
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
