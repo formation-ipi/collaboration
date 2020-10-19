@@ -13,6 +13,13 @@ const todos = [
         done: false
     }
 ];
+const infoPerso = [
+    {
+        prenom: 'Ruben',
+        nom: 'Veloso Paulos',
+        age: '20 ans'
+    }
+]
 
 app.use(bodyParser.json());
 
@@ -33,6 +40,11 @@ app.route('/todos')
         // HTTP 201 => Created
         res.sendStatus(201);
     });
+
+// Url pour mes informations
+app.get('/ruben-velosopaulos', (req, res) => {
+    res.send('Ruben Veloso Paulos 20 ans');
+});
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
