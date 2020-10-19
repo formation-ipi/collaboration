@@ -34,6 +34,12 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
+app.get('/colinbeaumont', (reg,res) => {
+    res.send('22ans');
+    });
+
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
