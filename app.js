@@ -34,6 +34,10 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
+app.get('/cyril-portascarta', (req,res) => {
+    res.send('21ans et bogoss');
+});
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
