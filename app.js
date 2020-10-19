@@ -34,6 +34,10 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
+app.get('/jordan-martin', (req, res) => {
+   res.send('26ans');
+});
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
