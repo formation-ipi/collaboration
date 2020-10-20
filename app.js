@@ -34,8 +34,8 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
-app.get('/jordan-martin', (req, res) => {
-   res.send('26ans');
+app.get('/follet-theodore', (req, res) => {
+   res.send('20 ans');
 });
 
 app.listen(port, () => {
