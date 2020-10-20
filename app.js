@@ -32,6 +32,7 @@ const me = [
     }
 ];
 
+
 const infoPerso = [
     {
         prenom: 'Ruben',
@@ -69,6 +70,7 @@ app.route('/todos')
     // Récupération des todos
     .get((req, res) => {
         res.json(todos);
+
     })
     // Création d'un todo
     .post((req, res) => {
@@ -82,6 +84,13 @@ app.get('/cyril-portascarta', (req,res) => {
   
 app.get('/jordan-martin', (req, res) => {
    res.send('26ans');
+
+    app.get('/mohamedboudissa', (req, res) => {
+    res.send('22ans');
+    });
+
+
+
 
 app.get('/ruben-velosopaulos', (req, res) => {
     res.send('Ruben Veloso Paulos 20 ans');
@@ -101,15 +110,17 @@ app.route('/antoine-bouard')
         res.sendStatus(201);
     });
 
-
 app.route('/me')
     // Récupération des todos
     .get((req, res) => {
         res.json(me);
+
     });
 
 app.get('/achraf-melki',(req, res) => {res.send('Achraf Melki 21 ans');
 });
+
+  
 
 app.get('/hugo-mercier', (reg,res) => {
     res.send('21ans');
@@ -119,6 +130,9 @@ app.get('/maxime-decorde', (req, res) => {
 res.send('21ans et 1 mètre 21 centimetres');
 });
 
+app.get('/GiraultMaxence' , (req,res) => {
+    res.send('20');
+});
 
 
 app.listen(port, () => {
