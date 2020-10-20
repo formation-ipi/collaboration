@@ -80,7 +80,10 @@ app.route('/antoine-bouard')
 app.get('/hugo-mercier', (reg,res) => {
     res.send('21ans');
 });
-
+  
+app.get('/maxime-decorde', (req, res) => {
+res.send('21ans et 1 mètre 21 centimetres');
+});
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
