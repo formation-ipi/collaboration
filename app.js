@@ -110,6 +110,10 @@ app.route('/antoine-bouard')
         res.sendStatus(201);
     });
 
+app.get('/colinbeaumont', (reg,res) => {
+    res.send('22ans');
+    });
+
 app.route('/me')
     // Récupération des todos
     .get((req, res) => {
@@ -133,7 +137,6 @@ res.send('21ans et 1 mètre 21 centimetres');
 app.get('/GiraultMaxence' , (req,res) => {
     res.send('20');
 });
-
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
