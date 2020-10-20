@@ -15,6 +15,26 @@ const todos = [
 ];
 
 
+const infoPerso = [
+    {
+        prenom: 'Ruben',
+        nom: 'Veloso Paulos',
+        age: '20 ans'
+    }
+]
+const antoinebouard = [
+    {
+        title: 'Prénom',
+        info: 'Antoine'
+    },
+    {
+        title: 'Nom',
+        info: 'Bouard'
+    }
+];
+
+
+
 app.use(bodyParser.json());
 
 // Log des requêtes
@@ -35,10 +55,32 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
+
     app.get('/mohamedboudissa', (req, res) => {
     res.send('22ans');
     });
 
+
+
+
+app.get('/ruben-velosopaulos', (req, res) => {
+    res.send('Ruben Veloso Paulos 20 ans');
+
+app.get('/follet-theodore', (req, res) => {
+   res.send('20 ans');
+
+});
+app.route('/antoine-bouard')
+    // Récupération de la variable antoine
+    .get((req, res) => {
+        res.json(antoinebouard);
+    })
+    // Création d'un todo
+    .post((req, res) => {
+        antoinebouard.push(req.body);
+        // HTTP 201 => Created
+        res.sendStatus(201);
+    });
 
 
 app.listen(port, () => {
