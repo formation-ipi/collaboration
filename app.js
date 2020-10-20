@@ -34,6 +34,10 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
+app.get('/maxime-decorde', (req, res) => {
+res.send('21ans et 1 mètre 21 centimetres');
+});
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
