@@ -13,6 +13,14 @@ const todos = [
         done: false
     }
 ];
+
+const infoPerso = [
+    {
+        prenom: 'Ruben',
+        nom: 'Veloso Paulos',
+        age: '20 ans'
+    }
+]
 const antoinebouard = [
     {
         title: 'Prénom',
@@ -23,6 +31,7 @@ const antoinebouard = [
         info: 'Bouard'
     }
 ];
+
 
 app.use(bodyParser.json());
 
@@ -44,8 +53,13 @@ app.route('/todos')
         res.sendStatus(201);
     });
 
+
+app.get('/ruben-velosopaulos', (req, res) => {
+    res.send('Ruben Veloso Paulos 20 ans');
+
 app.get('/follet-theodore', (req, res) => {
    res.send('20 ans');
+
 });
 app.route('/antoine-bouard')
     // Récupération de la variable antoine
