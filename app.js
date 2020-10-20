@@ -23,6 +23,7 @@ const me = [
     }
 ];
 
+
 const infoPerso = [
     {
         prenom: 'Ruben',
@@ -40,6 +41,7 @@ const antoinebouard = [
         info: 'Bouard'
     }
 ];
+
 
 
 app.use(bodyParser.json());
@@ -73,6 +75,13 @@ app.get('/cyril-portascarta', (req,res) => {
 app.get('/jordan-martin', (req, res) => {
    res.send('26ans');
 
+    app.get('/mohamedboudissa', (req, res) => {
+    res.send('22ans');
+    });
+
+
+
+
 app.get('/ruben-velosopaulos', (req, res) => {
     res.send('Ruben Veloso Paulos 20 ans');
 
@@ -97,7 +106,7 @@ app.route('/me')
     .get((req, res) => {
         res.json(me);
     });
-=======
+
 app.get('/hugo-mercier', (reg,res) => {
     res.send('21ans');
 });
@@ -105,6 +114,7 @@ app.get('/hugo-mercier', (reg,res) => {
 app.get('/maxime-decorde', (req, res) => {
 res.send('21ans et 1 mètre 21 centimetres');
 });
+
 
 
 app.listen(port, () => {
