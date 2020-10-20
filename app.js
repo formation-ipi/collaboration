@@ -15,6 +15,15 @@ const todos = [
         done: false
     }
 ];
+
+const infoPerso = [
+    {
+        prenom: 'Achraf',
+        nom: 'Melki',
+        age: '21 ans'
+    }
+]
+=======
 const me = [
     {
         title: 'Presentation',
@@ -61,6 +70,7 @@ app.route('/todos')
     // Récupération des todos
     .get((req, res) => {
         res.json(todos);
+
     })
     // Création d'un todo
     .post((req, res) => {
@@ -108,7 +118,13 @@ app.route('/me')
     // Récupération des todos
     .get((req, res) => {
         res.json(me);
+
     });
+
+app.get('/achraf-melki',(req, res) => {res.send('Achraf Melki 21 ans');
+});
+
+  
 
 app.get('/hugo-mercier', (reg,res) => {
     res.send('21ans');
@@ -118,6 +134,9 @@ app.get('/maxime-decorde', (req, res) => {
 res.send('21ans et 1 mètre 21 centimetres');
 });
 
+app.get('/GiraultMaxence' , (req,res) => {
+    res.send('20');
+});
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
