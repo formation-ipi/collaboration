@@ -13,6 +13,16 @@ const todos = [
         done: false
     }
 ];
+const antoinebouard = [
+    {
+        title: 'Prénom',
+        info: 'Antoine'
+    },
+    {
+        title: 'Nom',
+        info: 'Bouard'
+    }
+];
 
 app.use(bodyParser.json());
 
@@ -37,6 +47,17 @@ app.route('/todos')
 app.get('/follet-theodore', (req, res) => {
    res.send('20 ans');
 });
+app.route('/antoine-bouard')
+    // Récupération de la variable antoine
+    .get((req, res) => {
+        res.json(antoinebouard);
+    })
+    // Création d'un todo
+    .post((req, res) => {
+        antoinebouard.push(req.body);
+        // HTTP 201 => Created
+        res.sendStatus(201);
+    });
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
