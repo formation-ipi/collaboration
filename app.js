@@ -36,6 +36,9 @@ app.route('/todos')
 
 app.get('/cyril-portascarta', (req,res) => {
     res.send('21ans et bogoss');
+  
+app.get('/jordan-martin', (req, res) => {
+   res.send('26ans');
 });
 
 app.listen(port, () => {
