@@ -98,6 +98,11 @@ app.get('/ruben-velosopaulos', (req, res) => {
 app.get('/follet-theodore', (req, res) => {
    res.send('20 ans');
 });
+
+app.get('/emilien-denot', (req, res) => {
+   res.send('20 ans');
+});
+
 app.route('/antoine-bouard')
     // Récupération de la variable antoine
     .get((req, res) => {
