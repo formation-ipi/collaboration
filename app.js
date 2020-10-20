@@ -77,6 +77,13 @@ app.route('/antoine-bouard')
         res.sendStatus(201);
     });
 
+app.get('/hugo-mercier', (reg,res) => {
+    res.send('21ans');
+});
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
+
+
 });
