@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser');
 
 const app = express();
+app.engine('html', require('ejs').renderFile);
+
 const port = process.env.PORT || 3000;
 const todos = [
     {
@@ -11,6 +13,13 @@ const todos = [
     {
         title: 'TP GIT',
         done: false
+    }
+];
+const me = [
+    {
+        title: 'Presentation',
+        age: 25,
+        name: "Eymeric SERTGOZ",
     }
 ];
 
@@ -43,6 +52,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+        res.render("index.html")
+    })
+
+
 app.route('/todos')
     // Récupération des todos
     .get((req, res) => {
@@ -53,8 +67,13 @@ app.route('/todos')
         todos.push(req.body);
         // HTTP 201 => Created
         res.sendStatus(201);
-    });
+    })
 
+app.get('/cyril-portascarta', (req,res) => {
+    res.send('21ans et bogoss');
+  
+app.get('/jordan-martin', (req, res) => {
+   res.send('26ans');
 
     app.get('/mohamedboudissa', (req, res) => {
     res.send('22ans');
@@ -68,7 +87,6 @@ app.get('/ruben-velosopaulos', (req, res) => {
 
 app.get('/follet-theodore', (req, res) => {
    res.send('20 ans');
-
 });
 app.route('/antoine-bouard')
     // Récupération de la variable antoine
@@ -83,6 +101,24 @@ app.route('/antoine-bouard')
     });
 
 
+app.route('/me')
+    // Récupération des todos
+    .get((req, res) => {
+        res.json(me);
+    });
+
+app.get('/hugo-mercier', (reg,res) => {
+    res.send('21ans');
+});
+  
+app.get('/maxime-decorde', (req, res) => {
+res.send('21ans et 1 mètre 21 centimetres');
+});
+
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
+
+
 });
