@@ -13,7 +13,13 @@ const todos = [
         done: false
     }
 ];
-
+const infoPerso = [
+    {
+        prenom: 'Achraf',
+        nom: 'Melki',
+        age: '21 ans'
+    }
+]
 app.use(bodyParser.json());
 
 // Log des requêtes
@@ -33,7 +39,8 @@ app.route('/todos')
         // HTTP 201 => Created
         res.sendStatus(201);
     });
-
+app.get('/achraf-melki',(req, res) => {res.send('Achraf Melki 21 ans');
+});
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
