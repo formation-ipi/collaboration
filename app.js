@@ -32,7 +32,7 @@ app.route('/todos')
         todos.push(req.body);
         // HTTP 201 => Created
         res.sendStatus(201);
-    });
+    })
 
 app.get('/cyril-portascarta', (req,res) => {
     res.send('21ans et bogoss');
