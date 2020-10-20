@@ -14,6 +14,7 @@ const todos = [
     }
 ];
 
+
 app.use(bodyParser.json());
 
 // Log des requêtes
@@ -33,6 +34,12 @@ app.route('/todos')
         // HTTP 201 => Created
         res.sendStatus(201);
     });
+
+    app.get('/mohamedboudissa', (req, res) => {
+    res.send('22ans');
+    });
+
+
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
