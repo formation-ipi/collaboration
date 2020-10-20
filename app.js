@@ -89,6 +89,7 @@ app.get('/jordan-martin', (req, res) => {
     res.send('22ans');
     });
 
+app.get('/jose-ravelomanantsoa', (req, res) => { res.send('21 ans')};
 
 
 
@@ -98,6 +99,11 @@ app.get('/ruben-velosopaulos', (req, res) => {
 app.get('/follet-theodore', (req, res) => {
    res.send('20 ans');
 });
+
+app.get('/emilien-denot', (req, res) => {
+   res.send('20 ans');
+});
+
 app.route('/antoine-bouard')
     // Récupération de la variable antoine
     .get((req, res) => {
@@ -108,6 +114,10 @@ app.route('/antoine-bouard')
         antoinebouard.push(req.body);
         // HTTP 201 => Created
         res.sendStatus(201);
+    });
+
+app.get('/colinbeaumont', (reg,res) => {
+    res.send('22ans');
     });
 
 app.route('/me')
@@ -133,7 +143,6 @@ res.send('21ans et 1 mètre 21 centimetres');
 app.get('/GiraultMaxence' , (req,res) => {
     res.send('20');
 });
-
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
